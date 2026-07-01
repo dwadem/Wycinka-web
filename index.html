@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============================================================
+       SEO
+       ============================================================ -->
+  <title>Wycinka drzew Rzeszów — alpinistyczna wycinka i pielęgnacja | [NAZWA FIRMY]</title>
+  <meta name="description" content="Alpinistyczna wycinka i pielęgnacja drzew w Rzeszowie i okolicach. Bezpiecznie usuwamy drzewa trudne przy domach i liniach energetycznych. Certyfikowani, ubezpieczeni. Bezpłatna wycena." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1F3D2C" />
+  <!-- ZMIEŃ na docelowy adres strony po publikacji -->
+  <link rel="canonical" href="https://[TWOJA-DOMENA].pl/" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Wycinka drzew Rzeszów — alpinistyczna wycinka i pielęgnacja | [NAZWA FIRMY]" />
+  <meta property="og:description" content="Bezpieczna, alpinistyczna wycinka i pielęgnacja drzew w Rzeszowie i okolicach. Bezpłatna wycena z dojazdem." />
+  <!-- Wstaw adres zdjęcia podglądowego (min. 1200×630 px): -->
+  <meta property="og:image" content="https://[TWOJA-DOMENA].pl/og-image.jpg" />
+  <meta property="og:url" content="https://[TWOJA-DOMENA].pl/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ============================================================
+       FONTY (Google Fonts)
+       Nagłówki: Bricolage Grotesque | Treść/UI: Inter
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ============================================================
+     1. ZMIENNE / PALETA (dokładne wartości marki)
+     ============================================================ */
+  :root {
+    --forest:  #1F3D2C; /* leśna zieleń — ciemne sekcje */
+    --moss:    #3E6B4A; /* mchowa zieleń — drugorzędny */
+    --paper:   #F3F4EE; /* papierowa biel — jasne sekcje */
+    --bark:    #18211C; /* kora / grafit — tekst */
+    --orange:  #DD4F1A; /* pomarańcz bezpieczeństwa — CTA */
+    --orange-600: #c4430f; /* ciemniejszy pomarańcz (hover) */
+
+    --paper-70: rgba(243, 244, 238, 0.72);
+    --line-light: rgba(24, 33, 28, 0.12);
+    --line-dark:  rgba(243, 244, 238, 0.16);
+
+    --shadow-sm: 0 1px 2px rgba(24,33,28,.08), 0 2px 8px rgba(24,33,28,.06);
+    --shadow-md: 0 6px 18px rgba(24,33,28,.12), 0 2px 6px rgba(24,33,28,.08);
+    --shadow-lg: 0 18px 40px rgba(24,33,28,.18);
+
+    --radius: 14px;
+    --radius-lg: 20px;
+
+    --container: 1160px;
+    --pad-x: clamp(1rem, 4vw, 2rem);
+    --section-y: clamp(3.25rem, 8vw, 6rem);
+
+    --ff-head: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+    --ff-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+
+  /* ============================================================
+     2. RESET / BAZA
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--ff-body);
+    font-size: 1rem;              /* min 16px */
+    line-height: 1.6;
+    color: var(--bark);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  img, svg { display: block; max-width: 100%; }
+  img { height: auto; }
+
+  a { color: inherit; text-decoration-color: rgba(221,79,26,.45); text-underline-offset: 3px; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--ff-head);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  /* ============================================================
+     3. DOSTĘPNOŚĆ: focus + skip link
+     ============================================================ */
+  :focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .btn--primary:focus-visible,
+  .on-dark :focus-visible { outline-color: #fff; }
+
+  .skip-link {
+    position: absolute;
+    left: 12px; top: -60px;
+    z-index: 1000;
+    background: var(--bark);
+    color: #fff;
+    padding: .7rem 1.1rem;
+    border-radius: 8px;
+    transition: top .18s ease;
+    font-weight: 600;
+  }
+  .skip-link:focus { top: 12px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  /* ============================================================
+     4. UKŁAD / KONTENER
+     ============================================================ */
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--pad-x);
+  }
+  .section { padding-block: var(--section-y); position: relative; }
+
+  /* Naprzemienne tła */
+  .section--paper { background: var(--paper); color: var(--bark); }
+  .section--forest { background: var(--forest); color: var(--paper); }
+  .section--moss  { background: var(--moss); color: var(--paper); }
+
+  .on-dark { color: var(--paper); }
+
+  /* Nagłówek sekcji (kicker + tytuł) */
+  .kicker {
+    display: inline-flex; align-items: center; gap: .5rem;
+    font-family: var(--ff-body);
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: .85rem;
+  }
+  .section--forest .kicker, .section--moss .kicker { color: #f0a882; }
+  .kicker::before {
+    content: ""; width: 26px; height: 2px; background: var(--orange); border-radius: 2px;
+  }
+  .section--forest .kicker::before, .section--moss .kicker::before { background: #f0a882; }
+
+  .section-title { font-size: clamp(1.7rem, 3.6vw, 2.55rem); }
+  .section-lead {
+    font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+    max-width: 60ch;
+    margin-top: 1rem;
+    color: color-mix(in srgb, currentColor 82%, transparent);
+  }
+
+  /* ============================================================
+     5. PRZYCISKI
+     ============================================================ */
+  .btn {
+    --btn-bg: var(--forest);
+    --btn-fg: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: .6rem;
+    font-family: var(--ff-body);
+    font-weight: 700;
+    font-size: 1.02rem;           /* duży, czytelny */
+    line-height: 1.1;
+    padding: .95rem 1.5rem;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+    box-shadow: var(--shadow-sm);
+  }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .btn:active { transform: translateY(0); }
+
+  .btn--primary { --btn-bg: var(--orange); --btn-fg: #fff; }
+  .btn--primary:hover { --btn-bg: var(--orange-600); }
+
+  .btn--ghost {
+    --btn-bg: transparent; --btn-fg: currentColor;
+    border-color: currentColor;
+    box-shadow: none;
+  }
+  .btn--ghost:hover { background: rgba(255,255,255,.08); }
+  .section--paper .btn--ghost:hover { background: rgba(24,33,28,.05); }
+
+  .btn--block { width: 100%; }
+
+  /* ============================================================
+     6. SYGNATURA: LINA ASEKURACYJNA (scroll-draw)
+     ============================================================ */
+  .rope {
+    position: fixed;
+    top: 0; left: clamp(6px, 2vw, 30px);
+    width: 44px; height: 100vh;
+    z-index: 3;
+    pointer-events: none;
+    opacity: .55;
+  }
+  .rope__line { width: 100%; height: 100%; overflow: visible; }
+  .rope__line path {
+    fill: none;
+    stroke: var(--orange);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    /* Bez JS lina jest w pełni widoczna (progressive enhancement) */
+  }
+  .rope__line .rope-shadow {
+    stroke: rgba(24,33,28,.28);
+    stroke-width: 3.4;
+  }
+  /* Punkty kotwiące — karabinki / węzełki */
+  .rope__anchor {
+    position: absolute;
+    left: 50%;
+    width: 22px; height: 22px;
+    transform: translate(-50%, -50%) scale(.6);
+    opacity: 0;
+    transition: opacity .4s ease, transform .4s ease;
+    color: var(--orange);
+  }
+  .rope__anchor.is-visible { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  .rope--static .rope__anchor { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+  @media (min-width: 640px) { .rope { opacity: .85; width: 52px; } }
+  @media (max-width: 480px)  { .rope { opacity: .38; } }
+
+  /* ============================================================
+     7. PASEK GÓRNY (sticky)
+     ============================================================ */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--paper-70);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line-light);
+  }
+  .topbar__inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem;
+    padding-block: .6rem;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: .6rem;
+    font-family: var(--ff-head);
+    font-weight: 800;
+    font-size: 1.12rem;
+    letter-spacing: -.02em;
+    color: var(--bark);
+    text-decoration: none;
+    line-height: 1.05;
+  }
+  .brand__mark {
+    width: 34px; height: 34px; flex: none;
+    color: var(--forest);
+  }
+  .brand small {
+    display: block;
+    font-family: var(--ff-body);
+    font-weight: 600;
+    font-size: .62rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--moss);
+  }
+  .topbar__actions { display: flex; align-items: center; gap: .6rem; }
+  .topbar__phone {
+    display: inline-flex; align-items: center; gap: .5rem;
+    font-weight: 700;
+    color: var(--bark);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: .4rem .3rem;
+  }
+  .topbar__phone svg { width: 18px; height: 18px; color: var(--forest); }
+  .topbar__phone:hover { color: var(--forest); }
+
+  @media (max-width: 620px) {
+    .topbar__phone .num { display: none; }
+    .brand small { display: none; }
+  }
+
+  /* ============================================================
+     8. HERO
+     ============================================================ */
+  .hero {
+    position: relative;
+    color: var(--paper);
+    background: var(--forest);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero__bg {
+    position: absolute; inset: 0; z-index: -2;
+    /* === WSTAW ZDJĘCIE TŁA: arborysta na linie w koronie drzewa (1920×1280, .webp) ===
+       Podmień gradient poniżej na:
+       background: url("images/hero-arborysta.webp") center/cover no-repeat; */
+    background:
+      radial-gradient(120% 90% at 78% 12%, rgba(62,107,74,.55) 0%, transparent 55%),
+      radial-gradient(90% 70% at 8% 100%, rgba(24,33,28,.7) 0%, transparent 60%),
+      linear-gradient(160deg, #274a35 0%, #1F3D2C 48%, #16281d 100%);
+  }
+  /* Nakładka poprawiająca kontrast tekstu na przyszłym zdjęciu */
+  .hero__scrim {
+    position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(100deg, rgba(15,26,19,.82) 0%, rgba(15,26,19,.55) 45%, rgba(15,26,19,.15) 100%);
+  }
+  /* Delikatna faktura "światła w koronie" */
+  .hero__canopy {
+    position: absolute; inset: 0; z-index: -1; opacity: .5;
+    background-image:
+      radial-gradient(6px 6px at 20% 30%, rgba(240,168,130,.25), transparent 60%),
+      radial-gradient(5px 5px at 65% 18%, rgba(243,244,238,.18), transparent 60%),
+      radial-gradient(7px 7px at 82% 46%, rgba(240,168,130,.16), transparent 60%),
+      radial-gradient(4px 4px at 40% 62%, rgba(243,244,238,.12), transparent 60%);
+    pointer-events: none;
+  }
+  .hero__inner {
+    display: grid;
+    gap: 2rem;
+    padding-block: clamp(3rem, 9vw, 6.5rem);
+    align-items: center;
+  }
+  .hero__content { max-width: 42rem; }
+  .hero h1 {
+    font-size: clamp(2.1rem, 6vw, 3.7rem);
+    font-weight: 800;
+    margin-bottom: 1.1rem;
+  }
+  .hero h1 .accent { color: #f0a882; }
+  .hero__sub {
+    font-size: clamp(1.05rem, 2vw, 1.28rem);
+    color: rgba(243,244,238,.92);
+    max-width: 44ch;
+    margin-bottom: 1.8rem;
+  }
+  .hero__cta { display: flex; flex-wrap: wrap; gap: .85rem; }
+  .hero__cta .btn--phone { font-size: 1.06rem; }
+  .hero__note {
+    margin-top: 1.4rem;
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-size: .92rem; color: rgba(243,244,238,.8);
+  }
+  .hero__note svg { width: 18px; height: 18px; color: #7fc793; }
+
+  @media (min-width: 900px) {
+    .hero__inner { grid-template-columns: 1.15fr .85fr; }
+    .hero__figure { align-self: stretch; }
+  }
+  /* Placeholder zdjęcia w kolumnie hero (desktop) */
+  .hero__figure {
+    position: relative;
+    min-height: 300px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(243,244,238,.18);
+    background:
+      linear-gradient(180deg, rgba(24,33,28,.15), rgba(24,33,28,.55)),
+      repeating-linear-gradient(115deg, rgba(62,107,74,.5) 0 22px, rgba(39,74,53,.5) 22px 44px);
+    display: none;
+  }
+  @media (min-width: 900px) { .hero__figure { display: grid; place-items: center; } }
+  .hero__figure .ph-label { position: static; }
+
+  /* ============================================================
+     9. PASEK ZAUFANIA
+     ============================================================ */
+  .trust { background: var(--moss); color: var(--paper); border-block: 1px solid rgba(0,0,0,.12); }
+  .trust__list {
+    list-style: none; padding: 0;
+    display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: center;
+    gap: .5rem 1.4rem;
+    padding-block: 1rem;
+  }
+  .trust__list li {
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-weight: 600; font-size: .96rem;
+  }
+  .trust__list svg { width: 20px; height: 20px; flex: none; color: #bfe6c9; }
+  .trust__sep { color: rgba(243,244,238,.4); }
+  @media (max-width: 620px) {
+    .trust__list li.trust__sep { display: none; } /* wyższa specyficzność niż .trust__list li */
+    .trust__list { flex-direction: column; align-items: flex-start; gap: .7rem; text-align: left; justify-content: flex-start; }
+  }
+
+  /* ============================================================
+     10. USŁUGI
+     ============================================================ */
+  .services__grid {
+    margin-top: 2.4rem;
+    display: grid;
+    gap: 1.1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+  }
+  .service {
+    background: #fff;
+    border: 1px solid var(--line-light);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.4rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .service:hover, .service:focus-within {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(62,107,74,.4);
+  }
+  .service__icon {
+    width: 48px; height: 48px;
+    display: grid; place-items: center;
+    border-radius: 12px;
+    background: rgba(62,107,74,.12);
+    color: var(--forest);
+    margin-bottom: 1rem;
+  }
+  .service__icon svg { width: 26px; height: 26px; }
+  .service h3 { font-size: 1.22rem; margin-bottom: .4rem; }
+  .service p { color: rgba(24,33,28,.72); font-size: .98rem; }
+  .services__note {
+    margin-top: 1.8rem;
+    font-family: var(--ff-head);
+    font-weight: 600;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--forest);
+    display: inline-flex; align-items: center; gap: .7rem;
+  }
+  .services__note svg { width: 24px; height: 24px; color: var(--orange); flex: none; }
+
+  /* ============================================================
+     11. REALIZACJE PRZED / PO
+     ============================================================ */
+  .ba-wrap { margin-top: 2.4rem; display: grid; gap: 1.4rem; }
+  @media (min-width: 860px) { .ba-wrap { grid-template-columns: 1.4fr 1fr; align-items: start; } }
+
+  /* Interaktywny suwak przed/po */
+  .ba {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(243,244,238,.2);
+    user-select: none;
+    touch-action: pan-y;
+    isolation: isolate;
+  }
+  .ba__img {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-family: var(--ff-head); font-weight: 700;
+    color: #fff;
+  }
+  /* PRZED — gęste, zarośnięte, zaniedbane */
+  .ba__before {
+    z-index: 2;
+    width: 50%;
+    overflow: hidden;
+    /* === WSTAW ZDJĘCIE "PRZED": to samo drzewo/teren przed pracą === */
+    background:
+      linear-gradient(180deg, rgba(24,33,28,.2), rgba(24,33,28,.55)),
+      repeating-linear-gradient(58deg, #24402f 0 14px, #1c3325 14px 28px);
+  }
+  /* PO — uprzątnięte, kontrolowane */
+  .ba__after {
+    z-index: 1;
+    /* === WSTAW ZDJĘCIE "PO": teren po wycince i uprzątnięciu === */
+    background:
+      linear-gradient(180deg, rgba(62,107,74,.15), rgba(31,61,44,.5)),
+      repeating-linear-gradient(58deg, #3E6B4A 0 30px, #35603f 30px 60px);
+  }
+  .ba__tag {
+    position: absolute; top: .8rem;
+    font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    background: rgba(15,26,19,.72); color: #fff;
+    padding: .3rem .6rem; border-radius: 999px;
+  }
+  .ba__before .ba__tag { left: .8rem; }
+  .ba__after .ba__tag { right: .8rem; background: rgba(221,79,26,.9); }
+
+  .ba__range {
+    position: absolute; inset: 0; z-index: 5;
+    width: 100%; height: 100%;
+    margin: 0; opacity: 0; cursor: ew-resize;
+  }
+  .ba__divider {
+    position: absolute; top: 0; bottom: 0; z-index: 3;
+    left: 50%; width: 3px; margin-left: -1.5px;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(24,33,28,.15);
+    pointer-events: none;
+  }
+  .ba__handle {
+    position: absolute; top: 50%; z-index: 4;
+    left: 50%;
+    width: 46px; height: 46px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--orange); color: #fff;
+    display: grid; place-items: center;
+    box-shadow: var(--shadow-md);
+    pointer-events: none;
+  }
+  .ba__handle svg { width: 24px; height: 24px; }
+  .ba__caption { margin-top: .7rem; font-size: .92rem; color: rgba(243,244,238,.85); text-align: center; }
+
+  /* Siatka pozostałych realizacji */
+  .ba-grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+  .realizacja {
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    position: relative;
+    border: 1px solid rgba(243,244,238,.18);
+    /* === WSTAW ZDJĘCIE realizacji === */
+    background:
+      linear-gradient(180deg, rgba(24,33,28,.05), rgba(24,33,28,.55)),
+      repeating-linear-gradient(120deg, #274a35 0 20px, #1f3d2c 20px 40px);
+  }
+  .realizacja figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: .7rem .8rem;
+    font-size: .86rem; font-weight: 600; color: #fff;
+    background: linear-gradient(0deg, rgba(15,26,19,.85), transparent);
+  }
+
+  /* Ogólny znacznik placeholdera zdjęcia */
+  .ph-label {
+    display: inline-flex; align-items: center; gap: .45rem;
+    background: rgba(15,26,19,.7); color: #fff;
+    font-size: .78rem; font-weight: 600;
+    padding: .4rem .7rem; border-radius: 999px;
+    max-width: calc(100% - 2rem);
+  }
+  .ph-label svg { width: 15px; height: 15px; color: var(--orange); flex: none; }
+
+  /* ============================================================
+     12. JAK DZIAŁAMY (1-2-3)
+     ============================================================ */
+  .steps {
+    margin-top: 2.4rem;
+    display: grid; gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    padding: 1.6rem 1.4rem 1.4rem;
+    background: #fff;
+    border: 1px solid var(--line-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  .step__num {
+    counter-increment: step;
+    display: grid; place-items: center;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--orange); color: #fff;
+    font-family: var(--ff-head); font-weight: 800; font-size: 1.35rem;
+    margin-bottom: .9rem;
+  }
+  .step__num::before { content: counter(step); }
+  .step h3 { font-size: 1.2rem; margin-bottom: .35rem; }
+  .step p { color: rgba(24,33,28,.72); }
+
+  /* ============================================================
+     13. FORMALNOŚCI (FAQ) — natywne <details>
+     ============================================================ */
+  .faq { margin-top: 2.2rem; max-width: 60rem; display: grid; gap: .8rem; }
+  .faq details {
+    background: rgba(243,244,238,.06);
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .faq summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 1.1rem 1.3rem;
+    cursor: pointer;
+    font-family: var(--ff-head);
+    font-weight: 600;
+    font-size: 1.12rem;
+    list-style: none;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .chev {
+    flex: none; width: 22px; height: 22px; color: var(--orange);
+    transition: transform .2s ease;
+  }
+  .faq details[open] summary .chev { transform: rotate(45deg); }
+  .faq summary:hover { color: #f0a882; }
+  .faq__body { padding: 0 1.3rem 1.2rem; color: rgba(243,244,238,.85); max-width: 62ch; }
+
+  /* ============================================================
+     14. OPINIE
+     ============================================================ */
+  .reviews {
+    margin-top: 2.4rem;
+    display: grid; gap: 1.1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+  .review {
+    background: #fff;
+    border: 1px solid var(--line-light);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.4rem;
+    box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column; gap: .8rem;
+  }
+  .stars { display: inline-flex; gap: 2px; color: var(--orange); }
+  .stars svg { width: 18px; height: 18px; }
+  .review blockquote { font-size: 1.02rem; color: var(--bark); }
+  .review cite { font-style: normal; font-weight: 600; color: var(--moss); font-size: .92rem; }
+  .reviews__link { margin-top: 1.6rem; display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--forest); }
+  .reviews__link svg { width: 20px; height: 20px; }
+
+  /* ============================================================
+     15. OBSZAR DZIAŁANIA
+     ============================================================ */
+  .area-wrap { margin-top: 2.2rem; display: grid; gap: 1.6rem; }
+  @media (min-width: 820px) { .area-wrap { grid-template-columns: 1fr 1fr; align-items: stretch; } }
+  .area__map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line-dark);
+    min-height: 320px;
+    background: #16281d;
+  }
+  .area__map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; filter: saturate(.9); }
+  .area__towns { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+  .area__towns li {
+    background: rgba(243,244,238,.08);
+    border: 1px solid var(--line-dark);
+    padding: .45rem .9rem; border-radius: 999px; font-weight: 600; font-size: .94rem;
+  }
+  .area__towns li.is-hq { background: var(--orange); border-color: var(--orange); color:#fff; }
+
+  /* ============================================================
+     16. KONTAKT
+     ============================================================ */
+  .contact-wrap { margin-top: 2.4rem; display: grid; gap: 1.8rem; }
+  @media (min-width: 900px) { .contact-wrap { grid-template-columns: 1.1fr .9fr; align-items: start; } }
+
+  .contact__big-phone {
+    display: inline-flex; align-items: center; gap: .8rem;
+    font-family: var(--ff-head); font-weight: 800;
+    font-size: clamp(1.8rem, 5vw, 2.9rem);
+    color: var(--forest); text-decoration: none;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+  .contact__big-phone svg { width: 1em; height: 1em; color: var(--orange); flex: none; }
+  .contact__big-phone:hover { color: var(--orange-600); }
+
+  .form { display: grid; gap: 1rem; }
+  .form .field { display: grid; gap: .4rem; }
+  .form .row { display: grid; gap: 1rem; }
+  @media (min-width: 560px) { .form .row { grid-template-columns: 1fr 1fr; } }
+  .form label { font-weight: 600; font-size: .95rem; }
+  .form label .req { color: var(--orange); }
+  .form input, .form textarea {
+    font: inherit;
+    padding: .8rem .9rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--line-light);
+    background: #fff;
+    color: var(--bark);
+    width: 100%;
+  }
+  .form input:focus, .form textarea:focus {
+    border-color: var(--forest);
+    outline: 3px solid rgba(221,79,26,.35);
+    outline-offset: 1px;
+  }
+  .form input[type="file"] { padding: .55rem; background: #fbfbf7; }
+  .form textarea { min-height: 120px; resize: vertical; }
+  .form__hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+  .form__submit { margin-top: .3rem; }
+  .form__consent { font-size: .82rem; color: rgba(24,33,28,.65); }
+
+  .contact-aside {
+    background: var(--forest); color: var(--paper);
+    border-radius: var(--radius-lg);
+    padding: 1.7rem 1.5rem;
+    box-shadow: var(--shadow-md);
+    display: grid; gap: 1.1rem;
+    align-content: start;
+  }
+  .contact-aside h3 { font-size: 1.3rem; }
+  .info-row { display: flex; gap: .8rem; align-items: flex-start; }
+  .info-row svg { width: 22px; height: 22px; color: #f0a882; flex: none; margin-top: 2px; }
+  .info-row a { color: #fff; }
+  .info-row .lbl { font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(243,244,238,.6); display:block; }
+  .emergency {
+    margin-top: .3rem;
+    display: flex; gap: .7rem; align-items: center;
+    background: rgba(221,79,26,.16);
+    border: 1px solid rgba(221,79,26,.45);
+    border-radius: 12px; padding: .9rem 1rem;
+    font-weight: 600; font-size: .95rem;
+  }
+  .emergency svg { width: 24px; height: 24px; color: var(--orange); flex: none; }
+
+  /* ============================================================
+     17. STOPKA
+     ============================================================ */
+  .footer { background: var(--bark); color: rgba(243,244,238,.75); }
+  .footer__inner { padding-block: 2.4rem; display: grid; gap: 1.4rem; }
+  @media (min-width: 700px) { .footer__inner { grid-template-columns: 1.4fr 1fr; align-items: center; } }
+  .footer__brand { display: inline-flex; align-items: center; gap: .6rem; color: var(--paper); font-family: var(--ff-head); font-weight: 800; font-size: 1.1rem; }
+  .footer__brand svg { width: 30px; height: 30px; color: #7fc793; }
+  .footer__meta { font-size: .9rem; line-height: 1.7; }
+  .footer__social { display: flex; gap: .7rem; margin-top: .3rem; }
+  .footer__social a {
+    width: 42px; height: 42px; border-radius: 10px;
+    display: grid; place-items: center;
+    background: rgba(243,244,238,.08);
+    border: 1px solid rgba(243,244,238,.14);
+    color: var(--paper);
+  }
+  .footer__social a:hover { background: var(--moss); }
+  .footer__social svg { width: 20px; height: 20px; }
+  .footer__fine { font-size: .82rem; color: rgba(243,244,238,.5); border-top: 1px solid rgba(243,244,238,.12); padding-top: 1.2rem; }
+
+  /* ============================================================
+     18. PASEK MOBILNY (sticky dół, tylko telefon)
+     ============================================================ */
+  .mobile-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+    padding: .6rem .7rem calc(.6rem + env(safe-area-inset-bottom));
+    background: var(--paper-70);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line-light);
+  }
+  .mobile-bar .btn { padding: .85rem 1rem; font-size: 1rem; }
+  @media (max-width: 760px) {
+    .mobile-bar { display: grid; }
+    body { padding-bottom: 76px; }
+  }
+
+  /* ============================================================
+     19. REDUCED MOTION
+     ============================================================ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+    }
+    .rope__anchor { transition: none; }
+  }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <!-- ============================================================
+       ZESTAW IKON (inline SVG symbols)
+       ============================================================ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-5-5"/>
+      </symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="9" r="6"/><path d="m9 15-2 6 5-3 5 3-2-6"/><path d="m9.5 9 1.7 1.7L14.5 7.5"/>
+      </symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 5h11v11H2zM13 8h4l3 3v5h-7"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="16.5" cy="18.5" r="1.8"/>
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+      </symbol>
+      <symbol id="i-broom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 4 9 14"/><path d="M13 6.5 17.5 11"/><path d="M9 14c-2 0-4 1-4.5 4C4 21 4 21 4 21s3 0 3.5-.5C10 18 10 16 10 14"/>
+      </symbol>
+      <!-- Drzewo / arborystyka -->
+      <symbol id="i-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2c-3 0-5 2-5 4.5 0 .6.1 1.1.3 1.6C5.7 8.8 5 10 5 11.5 5 14 7 15.5 9.5 15.5c.5 0 1-.1 1.5-.3V22h2v-6.8c.5.2 1 .3 1.5.3C17 15.5 19 14 19 11.5c0-1.5-.7-2.7-2.3-3.4.2-.5.3-1 .3-1.6C17 4 15 2 12 2Z"/>
+      </symbol>
+      <!-- Piła / cięcie -->
+      <symbol id="i-saw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 7h13l-2 3H5zM3 7l2 3M8 7l1 3M13 7l1 3M16 7l4 2v3a2 2 0 0 1-2 2h-2"/><path d="M5 10v9"/>
+      </symbol>
+      <!-- Zagrożenie / drzewo trudne -->
+      <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.3 3.2 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.2a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+      </symbol>
+      <!-- Frez / pień -->
+      <symbol id="i-stump" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="8" rx="8" ry="3.5"/><circle cx="12" cy="8" r="3"/><path d="M4 8v5c0 1.9 3.6 3.5 8 3.5s8-1.6 8-3.5V8"/>
+      </symbol>
+      <!-- Rębak / rozdrabnianie -->
+      <symbol id="i-chipper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="9" width="14" height="9" rx="1.5"/><path d="M17 12h2l2 2v2h-4"/><path d="M6 9 9 4M10 9l2-4"/><circle cx="7" cy="20" r="1.5"/><circle cx="15" cy="20" r="1.5"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.5 14.9 9l7 .6-5.3 4.6 1.6 6.8L12 17.5 5.8 21l1.6-6.8L2.1 9.6 9.1 9z"/>
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+      </symbol>
+      <symbol id="i-arrows" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 7-4 5 4 5M15 7l4 5-4 5"/>
+      </symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
+      </symbol>
+      <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V7c0-.8.2-1.3 1.5-1.3H17V2.5h-2.6C11.4 2.5 10 4 10 6.6V8.5H7.5V12H10v9.5h4V12h2.7l.3-3.5H14Z"/></symbol>
+      <symbol id="i-google" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12v3.2h5.35c-.25 1.4-1.6 4.1-5.35 4.1a5.9 5.9 0 0 1 0-11.8c1.7 0 2.8.72 3.45 1.35l2.35-2.27C16.4 3.4 14.4 2.5 12 2.5a9.5 9.5 0 1 0 0 19c5.48 0 9.1-3.85 9.1-9.27 0-.62-.07-1.1-.17-1.63Z"/></symbol>
+      <symbol id="i-carabiner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3c3.3 0 6 2.9 6 6.5S15.3 16 12 16s-6-2.9-6-6.5S8.7 3 12 3Z"/><path d="M12 16v5"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============================================================
+       SYGNATURA: LINA ASEKURACYJNA (scroll-draw, po lewej)
+       ============================================================ -->
+  <div class="rope" aria-hidden="true" id="rope">
+    <svg class="rope__line" viewBox="0 0 44 1000" preserveAspectRatio="none">
+      <path class="rope-shadow" d="M22 -20 C 10 120, 34 240, 22 360 S 8 560, 22 700 S 34 880, 22 1020" />
+      <path class="rope-main"   d="M22 -20 C 10 120, 34 240, 22 360 S 8 560, 22 700 S 34 880, 22 1020" />
+    </svg>
+    <!-- Karabinki w miejscach styku sekcji (reveal ze scrollem) -->
+    <span class="rope__anchor" style="top:16%" data-at="0.08"><svg><use href="#i-carabiner"/></svg></span>
+    <span class="rope__anchor" style="top:34%" data-at="0.28"><svg><use href="#i-carabiner"/></svg></span>
+    <span class="rope__anchor" style="top:54%" data-at="0.48"><svg><use href="#i-carabiner"/></svg></span>
+    <span class="rope__anchor" style="top:72%" data-at="0.68"><svg><use href="#i-carabiner"/></svg></span>
+    <span class="rope__anchor" style="top:88%" data-at="0.86"><svg><use href="#i-carabiner"/></svg></span>
+  </div>
+
+  <!-- ============================================================
+       1. PASEK GÓRNY (sticky)
+       ============================================================ -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#top" aria-label="[NAZWA FIRMY] — strona główna">
+        <svg class="brand__mark" aria-hidden="true"><use href="#i-tree"/></svg>
+        <span>[NAZWA FIRMY]<small>Arborysta · Rzeszów</small></span>
+      </a>
+      <div class="topbar__actions">
+        <!-- ZMIEŃ numer w href (format tel:+48...) oraz w widocznym tekście -->
+        <a class="topbar__phone" href="tel:+48000000000" aria-label="Zadzwoń: [NR TELEFONU]">
+          <svg aria-hidden="true"><use href="#i-phone"/></svg>
+          <span class="num">[NR TELEFONU]</span>
+        </a>
+        <a class="btn btn--primary" href="#kontakt">Bezpłatna wycena</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============================================================
+         2. HERO
+         ============================================================ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg"></div>
+      <div class="hero__scrim"></div>
+      <div class="hero__canopy"></div>
+      <div class="container hero__inner">
+        <div class="hero__content on-dark">
+          <h1 id="hero-title">Alpinistyczna wycinka i pielęgnacja drzew — <span class="accent">Rzeszów i okolice</span></h1>
+          <p class="hero__sub">Bezpiecznie usuwamy nawet najtrudniejsze drzewa — przy domach, liniach energetycznych i na cmentarzach. Certyfikowani, ubezpieczeni, sprzątamy po sobie.</p>
+          <div class="hero__cta">
+            <!-- ZMIEŃ numer telefonu -->
+            <a class="btn btn--primary btn--phone" href="tel:+48000000000">
+              <svg aria-hidden="true"><use href="#i-phone"/></svg>
+              Zadzwoń: [NR TELEFONU]
+            </a>
+            <a class="btn btn--ghost" href="#kontakt">
+              <svg aria-hidden="true"><use href="#i-image"/></svg>
+              Wyślij zdjęcie — wycenimy bezpłatnie
+            </a>
+          </div>
+          <p class="hero__note">
+            <svg aria-hidden="true"><use href="#i-check"/></svg>
+            Dojazd i wycena gratis · Oddzwaniamy w 24 h
+          </p>
+        </div>
+        <!-- Placeholder zdjęcia hero (widoczny na desktopie).
+             Docelowo tłem sekcji jest zdjęcie (patrz .hero__bg). -->
+        <figure class="hero__figure" aria-hidden="true">
+          <span class="ph-label"><svg><use href="#i-image"/></svg> Zdjęcie: arborysta na linie w koronie drzewa</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. PASEK ZAUFANIA
+         ============================================================ -->
+    <section class="trust" aria-label="Dlaczego my">
+      <div class="container">
+        <ul class="trust__list">
+          <li><svg aria-hidden="true"><use href="#i-badge"/></svg> Certyfikowany arborysta</li>
+          <li class="trust__sep" aria-hidden="true">•</li>
+          <li><svg aria-hidden="true"><use href="#i-shield"/></svg> Ubezpieczenie OC</li>
+          <li class="trust__sep" aria-hidden="true">•</li>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg> Bezpłatna wycena z dojazdem</li>
+          <li class="trust__sep" aria-hidden="true">•</li>
+          <li><svg aria-hidden="true"><use href="#i-broom"/></svg> Sprzątamy po pracy</li>
+          <li class="trust__sep" aria-hidden="true">•</li>
+          <li><svg aria-hidden="true"><use href="#i-tree"/></svg> Rzeszów i okolice</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. USŁUGI
+         ============================================================ -->
+    <section class="section section--paper" id="uslugi" aria-labelledby="uslugi-title">
+      <div class="container">
+        <span class="kicker">Zakres prac</span>
+        <h2 class="section-title" id="uslugi-title">Usługi arborystyczne od A do Z</h2>
+        <p class="section-lead">Alpinistyczna wycinka, pielęgnacja koron i interwencje po wichurach — z pełnym uprzątnięciem terenu. Specjalizujemy się w <strong>wycince drzew trudnych</strong> na Podkarpaciu.</p>
+
+        <div class="services__grid">
+          <article class="service">
+            <div class="service__icon"><svg aria-hidden="true"><use href="#i-tree"/></svg></div>
+            <h3>Alpinistyczna / sekcyjna wycinka drzew</h3>
+            <p>Bez ciężkiego sprzętu i podnośników. Schodzimy koroną i opuszczamy drewno kawałek po kawałku.</p>
+          </article>
+          <article class="service">
+            <div class="service__icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></div>
+            <h3>Drzewa trudne</h3>
+            <p>Przy budynkach i liniach energetycznych. Kontrolowane opuszczanie konarów tam, gdzie nie ma marginesu błędu.</p>
+          </article>
+          <article class="service">
+            <div class="service__icon"><svg aria-hidden="true"><use href="#i-saw"/></svg></div>
+            <h3>Pielęgnacja koron</h3>
+            <p>Cięcia sanitarne i prześwietlające — poprawiają zdrowie, statykę i bezpieczeństwo drzewa.</p>
+          </article>
+          <article class="service">
+            <div class="service__icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+            <h3>Usuwanie wiatrołomów</h3>
+            <p>Szybkie interwencje po wichurach — złomy, wywroty i drzewa zawieszone na budynkach.</p>
+          </article>
+          <article class="service">
+            <div class="service__icon"><svg aria-hidden="true"><use href="#i-stump"/></svg></div>
+            <h3>Frezowanie i usuwanie pni</h3>
+            <p>Frezujemy karpę poniżej poziomu gruntu — teren gotowy pod trawnik czy nowe nasadzenie.</p>
+          </article>
+          <article class="service">
+            <div class="service__icon"><svg aria-hidden="true"><use href="#i-chipper"/></svg></div>
+            <h3>Rozdrabnianie gałęzi i wywóz</h3>
+            <p>Rębakujemy gałęzie i wywozimy urobek. Zostaje czysty, uprzątnięty plac.</p>
+          </article>
+        </div>
+
+        <p class="services__note">
+          <svg aria-hidden="true"><use href="#i-check"/></svg>
+          Działamy „pod klucz” — od cięcia po uprzątnięty teren.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. REALIZACJE PRZED / PO
+         ============================================================ -->
+    <section class="section section--forest" id="realizacje" aria-labelledby="realizacje-title">
+      <div class="container">
+        <span class="kicker">Realizacje</span>
+        <h2 class="section-title" id="realizacje-title">Efekt „przed i po”</h2>
+        <p class="section-lead">Najtrudniejsze zlecenia z Rzeszowa i okolic. Przeciągnij suwak, żeby zobaczyć różnicę.</p>
+
+        <div class="ba-wrap">
+          <!-- Interaktywny suwak przed/po -->
+          <div>
+            <div class="ba" id="ba">
+              <!-- === WSTAW ZDJĘCIE "PO" jako tło .ba__after === -->
+              <div class="ba__img ba__after">
+                <span class="ba__tag">Po</span>
+                <span class="ph-label"><svg><use href="#i-image"/></svg> Zdjęcie „po” — teren uprzątnięty</span>
+              </div>
+              <!-- === WSTAW ZDJĘCIE "PRZED" jako tło .ba__before === -->
+              <div class="ba__img ba__before" id="ba-before">
+                <span class="ba__tag">Przed</span>
+                <span class="ph-label"><svg><use href="#i-image"/></svg> Zdjęcie „przed”</span>
+              </div>
+              <div class="ba__divider" id="ba-divider"></div>
+              <div class="ba__handle" id="ba-handle"><svg aria-hidden="true"><use href="#i-arrows"/></svg></div>
+              <input class="ba__range" id="ba-range" type="range" min="0" max="100" value="50"
+                     aria-label="Suwak porównania: przeciągnij, aby zobaczyć zdjęcie przed i po" />
+            </div>
+            <p class="ba__caption">Topola przy domu — Boguchwała</p>
+          </div>
+
+          <!-- Siatka pozostałych realizacji -->
+          <div class="ba-grid">
+            <!-- === WSTAW ZDJĘCIE === -->
+            <figure class="realizacja">
+              <span class="ph-label" style="position:absolute;top:.7rem;left:.7rem"><svg><use href="#i-image"/></svg> Zdjęcie</span>
+              <figcaption>Dąb między nagrobkami — Rzeszów</figcaption>
+            </figure>
+            <!-- === WSTAW ZDJĘCIE === -->
+            <figure class="realizacja">
+              <span class="ph-label" style="position:absolute;top:.7rem;left:.7rem"><svg><use href="#i-image"/></svg> Zdjęcie</span>
+              <figcaption>Świerk przy linii energetycznej — Tyczyn</figcaption>
+            </figure>
+            <!-- === WSTAW ZDJĘCIE === -->
+            <figure class="realizacja">
+              <span class="ph-label" style="position:absolute;top:.7rem;left:.7rem"><svg><use href="#i-image"/></svg> Zdjęcie</span>
+              <figcaption>Wiatrołom nad dachem — Głogów Małopolski</figcaption>
+            </figure>
+            <!-- === WSTAW ZDJĘCIE === -->
+            <figure class="realizacja">
+              <span class="ph-label" style="position:absolute;top:.7rem;left:.7rem"><svg><use href="#i-image"/></svg> Zdjęcie</span>
+              <figcaption>Prześwietlenie lipy — Łańcut</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. JAK DZIAŁAMY (1-2-3)
+         ============================================================ -->
+    <section class="section section--paper" id="jak-dzialamy" aria-labelledby="jak-title">
+      <div class="container">
+        <span class="kicker">Prosto i bez stresu</span>
+        <h2 class="section-title" id="jak-title">Jak działamy</h2>
+        <ol class="steps" style="list-style:none;padding:0">
+          <li class="step">
+            <div class="step__num" aria-hidden="true"></div>
+            <h3>Dzwonisz lub wysyłasz zdjęcie</h3>
+            <p>Wystarczy jedna fotografia drzewa i krótki opis. Odpowiadamy szybko i konkretnie.</p>
+          </li>
+          <li class="step">
+            <div class="step__num" aria-hidden="true"></div>
+            <h3>Przyjeżdżamy i bezpłatnie wyceniamy</h3>
+            <p>Oceniamy drzewo na miejscu, doradzamy zakres prac i podajemy jasną cenę — bez zobowiązań.</p>
+          </li>
+          <li class="step">
+            <div class="step__num" aria-hidden="true"></div>
+            <h3>Wykonujemy bezpiecznie i sprzątamy</h3>
+            <p>Pracujemy w asekuracji, kontrolowanie. Na koniec zostaje uprzątnięty, czysty teren.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. FORMALNOŚCI (FAQ)
+         ============================================================ -->
+    <section class="section section--forest" id="formalnosci" aria-labelledby="faq-title">
+      <div class="container">
+        <span class="kicker">Formalności</span>
+        <h2 class="section-title" id="faq-title">Zezwolenia i terminy — bierzemy to na siebie</h2>
+        <p class="section-lead">Nie znasz przepisów? Nie musisz. Podpowiadamy i pomagamy w papierach.</p>
+
+        <div class="faq">
+          <details>
+            <summary>Czy potrzebne jest zezwolenie na wycinkę?<svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__body">To zależy od gatunku, obwodu pnia i statusu terenu. Sprawdzimy to za Ciebie i pomożemy przygotować zgłoszenie lub wniosek do urzędu.</div>
+          </details>
+          <details>
+            <summary>Kiedy można wycinać drzewa?<svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__body">Najlepszy termin to okres od połowy października do końca lutego. Pielęgnację prowadzimy cały rok, z uwzględnieniem okresu lęgowego ptaków.</div>
+          </details>
+          <details>
+            <summary>Czy pracujecie blisko budynków i linii energetycznych?<svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__body">Tak. Specjalizujemy się w drzewach trudnych — opuszczamy konary kontrolowanie, kawałek po kawałku.</div>
+          </details>
+          <details>
+            <summary>Czy macie ubezpieczenie?<svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__body">Tak, posiadamy polisę OC obejmującą prace na wysokości.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. OPINIE
+         ============================================================ -->
+    <section class="section section--paper" id="opinie" aria-labelledby="opinie-title">
+      <div class="container">
+        <span class="kicker">Opinie klientów</span>
+        <h2 class="section-title" id="opinie-title">Zaufali nam sąsiedzi z okolicy</h2>
+
+        <div class="reviews">
+          <!-- === PODMIEŃ na realne opinie z Google === -->
+          <figure class="review">
+            <div class="stars" aria-label="Ocena 5 na 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+            <blockquote>„Trudna wycinka między domami wykonana bardzo profesjonalnie. Po pracy teren posprzątany. Polecam.”</blockquote>
+            <cite>— [Imię, miejscowość]</cite>
+          </figure>
+          <figure class="review">
+            <div class="stars" aria-label="Ocena 5 na 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+            <blockquote>„Świerk rósł tuż przy linii energetycznej. Panowie poradzili sobie sprawnie i bezpiecznie. Duży profesjonalizm.”</blockquote>
+            <cite>— [Imię, miejscowość]</cite>
+          </figure>
+          <figure class="review">
+            <div class="stars" aria-label="Ocena 5 na 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+            <blockquote>„Po wichurze złamane drzewo wisiało nad dachem. Przyjechali tego samego dnia. Ogromna ulga.”</blockquote>
+            <cite>— [Imię, miejscowość]</cite>
+          </figure>
+        </div>
+
+        <!-- ZMIEŃ link na profil firmy w Google -->
+        <a class="reviews__link" href="https://www.google.com/maps" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-google"/></svg>
+          Zobacz opinie w Google
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. OBSZAR DZIAŁANIA
+         ============================================================ -->
+    <section class="section section--forest" id="obszar" aria-labelledby="obszar-title">
+      <div class="container">
+        <span class="kicker">Obszar działania</span>
+        <h2 class="section-title" id="obszar-title">Rzeszów i okolice — w promieniu ok. 50 km</h2>
+        <p class="section-lead">Dojeżdżamy na terenie całego Podkarpacia w okolicy Rzeszowa. Dojazd do wyceny jest bezpłatny.</p>
+
+        <div class="area-wrap">
+          <div class="area__map">
+            <!-- Osadzona mapa Google (bez klucza API). Możesz podmienić na dokładny adres firmy. -->
+            <iframe
+              title="Mapa obszaru działania — Rzeszów i okolice"
+              src="https://www.google.com/maps?q=Rzesz%C3%B3w&z=10&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="on-dark">
+            <p style="font-weight:600">Wybrane miejscowości, w których pracujemy:</p>
+            <ul class="area__towns">
+              <li class="is-hq">Rzeszów</li>
+              <li>Boguchwała</li>
+              <li>Tyczyn</li>
+              <li>Łańcut</li>
+              <li>Głogów Małopolski</li>
+              <li>Strzyżów</li>
+              <li>Dębica</li>
+              <li>Sokołów Małopolski</li>
+              <li>Krasne</li>
+              <li>… i okolice</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10. KONTAKT (CTA końcowe)
+         ============================================================ -->
+    <section class="section section--paper" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="container">
+        <span class="kicker">Bezpłatna wycena</span>
+        <h2 class="section-title" id="kontakt-title">Napisz lub zadzwoń — oddzwonimy w 24 h</h2>
+
+        <div class="contact-wrap">
+          <div>
+            <!-- ZMIEŃ numer telefonu (href i tekst) -->
+            <a class="contact__big-phone" href="tel:+48000000000" aria-label="Zadzwoń: [NR TELEFONU]">
+              <svg aria-hidden="true"><use href="#i-phone"/></svg>
+              [NR TELEFONU]
+            </a>
+
+            <!-- ============================================================
+                 FORMULARZ
+                 Gotowy pod Formspree LUB Netlify Forms. Wybierz jeden wariant:
+
+                 A) FORMSPREE:
+                    - Ustaw action na swój endpoint, np. https://formspree.io/f/xzzzyyxx
+                    - method="POST" i enctype poniżej są już poprawne (obsługa załącznika).
+                    - Usuń atrybuty data-netlify oraz ukryte pola Netlify (form-name).
+
+                 B) NETLIFY FORMS:
+                    - Zostaw action="" (albo ustaw stronę podziękowania).
+                    - Zostaw data-netlify="true", netlify-honeypot oraz ukryte pole form-name.
+                    - Załączniki działają na Netlify z enctype="multipart/form-data".
+                 ============================================================ -->
+            <form class="form"
+                  action="https://formspree.io/f/TWOJ_ID"
+                  method="POST"
+                  enctype="multipart/form-data"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  name="wycena">
+
+              <!-- Netlify: ukryte pole z nazwą formularza (usuń przy Formspree) -->
+              <input type="hidden" name="form-name" value="wycena" />
+              <!-- Formspree: temat wiadomości + auto-odpowiedź (opcjonalnie) -->
+              <input type="hidden" name="_subject" value="Nowe zapytanie o wycenę — strona WWW" />
+
+              <!-- Honeypot antyspamowy (ukryty przed użytkownikiem) -->
+              <p class="form__hp" aria-hidden="true">
+                <label>Nie wypełniaj tego pola: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+              </p>
+
+              <div class="row">
+                <div class="field">
+                  <label for="f-name">Imię <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-name" name="imie" type="text" required autocomplete="name" placeholder="Jan" />
+                </div>
+                <div class="field">
+                  <label for="f-phone">Telefon <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-phone" name="telefon" type="tel" required autocomplete="tel" inputmode="tel" placeholder="600 000 000" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="f-city">Miejscowość <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-city" name="miejscowosc" type="text" required placeholder="np. Boguchwała" />
+              </div>
+
+              <div class="field">
+                <label for="f-msg">Opis problemu <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="f-msg" name="opis" required placeholder="np. Przechylona topola przy domu, boję się, że przewróci się na dach…"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="f-file">Zdjęcie drzewa (opcjonalnie)</label>
+                <input id="f-file" name="zdjecie" type="file" accept="image/*" />
+              </div>
+
+              <button class="btn btn--primary btn--block form__submit" type="submit">
+                <svg aria-hidden="true"><use href="#i-mail"/></svg>
+                Wyślij — oddzwonimy w 24 h
+              </button>
+              <p class="form__consent">Wysyłając formularz, zgadzasz się na kontakt w sprawie wyceny. Nie wysyłamy spamu.</p>
+            </form>
+          </div>
+
+          <!-- Panel informacyjny -->
+          <aside class="contact-aside">
+            <h3>Kontakt bezpośredni</h3>
+            <div class="info-row">
+              <svg aria-hidden="true"><use href="#i-phone"/></svg>
+              <div><span class="lbl">Telefon</span>
+                <!-- ZMIEŃ numer -->
+                <a href="tel:+48000000000">[NR TELEFONU]</a>
+              </div>
+            </div>
+            <div class="info-row">
+              <svg aria-hidden="true"><use href="#i-mail"/></svg>
+              <div><span class="lbl">E-mail</span>
+                <!-- ZMIEŃ e-mail -->
+                <a href="mailto:[E-MAIL]">[E-MAIL]</a>
+              </div>
+            </div>
+            <div class="info-row">
+              <svg aria-hidden="true"><use href="#i-clock"/></svg>
+              <div><span class="lbl">Godziny pracy</span>
+                Pon–Sob: 7:00–19:00<!-- ZMIEŃ godziny -->
+              </div>
+            </div>
+            <div class="emergency">
+              <svg aria-hidden="true"><use href="#i-alert"/></svg>
+              Dyżur interwencyjny po wichurach
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       12. STOPKA
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <span class="footer__brand">
+          <svg aria-hidden="true"><use href="#i-tree"/></svg>
+          [NAZWA FIRMY]
+        </span>
+        <p class="footer__meta">
+          NIP: [NIP] · Ubezpieczenie OC<br />
+          Alpinistyczna wycinka i pielęgnacja drzew — arborysta Rzeszów.
+        </p>
+        <div class="footer__social">
+          <!-- ZMIEŃ linki social -->
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+          <a href="https://www.google.com/maps" target="_blank" rel="noopener" aria-label="Wizytówka Google"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__meta" style="text-align:left">
+        <p><a href="tel:+48000000000">[NR TELEFONU]</a></p>
+        <p><a href="mailto:[E-MAIL]">[E-MAIL]</a></p>
+        <p>Rzeszów i okolice · Podkarpacie</p>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer__fine">
+        © <span id="year">2026</span> [NAZWA FIRMY]. Wszelkie prawa zastrzeżone.
+        Bezpłatna wycena z dojazdem na terenie Rzeszowa i okolic.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       11. PASEK MOBILNY (sticky dół, tylko telefon)
+       ============================================================ -->
+  <nav class="mobile-bar" aria-label="Szybki kontakt">
+    <!-- ZMIEŃ numer telefonu -->
+    <a class="btn btn--ghost" href="tel:+48000000000" style="color:var(--forest);border-color:var(--forest)">
+      <svg aria-hidden="true"><use href="#i-phone"/></svg> Zadzwoń
+    </a>
+    <a class="btn btn--primary" href="#kontakt">
+      <svg aria-hidden="true"><use href="#i-image"/></svg> Wyceń
+    </a>
+  </nav>
+
+  <!-- ============================================================
+       DANE STRUKTURALNE schema.org — LocalBusiness
+       Uzupełnij pola w [nawiasach] realnymi danymi.
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[NAZWA FIRMY]",
+    "description": "Alpinistyczna (sekcyjna) wycinka i pielęgnacja drzew w Rzeszowie i okolicach. Drzewa trudne przy budynkach i liniach energetycznych, usuwanie wiatrołomów, frezowanie pni.",
+    "image": "https://[TWOJA-DOMENA].pl/og-image.jpg",
+    "url": "https://[TWOJA-DOMENA].pl/",
+    "telephone": "+48000000000",
+    "email": "[E-MAIL]",
+    "priceRange": "$$",
+    "vatID": "[NIP]",
+    "currenciesAccepted": "PLN",
+    "paymentAccepted": "Gotówka, Przelew",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rzeszów",
+      "addressRegion": "Podkarpackie",
+      "postalCode": "[KOD POCZTOWY]",
+      "streetAddress": "[ULICA I NR]",
+      "addressCountry": "PL"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 50.0413, "longitude": 21.9990 },
+    "areaServed": [
+      { "@type": "City", "name": "Rzeszów" },
+      { "@type": "City", "name": "Boguchwała" },
+      { "@type": "City", "name": "Tyczyn" },
+      { "@type": "City", "name": "Łańcut" },
+      { "@type": "City", "name": "Głogów Małopolski" },
+      { "@type": "City", "name": "Strzyżów" },
+      { "@type": "City", "name": "Dębica" },
+      { "@type": "City", "name": "Sokołów Małopolski" },
+      { "@type": "City", "name": "Krasne" }
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "07:00",
+      "closes": "19:00"
+    }],
+    "sameAs": [
+      "https://facebook.com/[PROFIL]",
+      "https://www.google.com/maps/[WIZYTOWKA]"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Usługi arborystyczne",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alpinistyczna / sekcyjna wycinka drzew" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wycinka drzew trudnych przy budynkach i liniach energetycznych" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pielęgnacja koron — cięcia sanitarne i prześwietlające" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Usuwanie wiatrołomów — interwencje" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Frezowanie i usuwanie pni" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rozdrabnianie gałęzi i wywóz urobku" } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ============================================================
+       JS — minimalny, bez bibliotek
+       ============================================================ -->
+  <script>
+  (function () {
+    "use strict";
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* --- Rok w stopce --- */
+    var yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* --- SYGNATURA: lina asekuracyjna (scroll-draw) --- */
+    var rope = document.getElementById("rope");
+    var mainPath = rope ? rope.querySelector(".rope-main") : null;
+    var shadowPath = rope ? rope.querySelector(".rope-shadow") : null;
+    var anchors = rope ? Array.prototype.slice.call(rope.querySelectorAll(".rope__anchor")) : [];
+
+    if (rope && mainPath) {
+      if (reduceMotion) {
+        /* Reduced motion: lina w pełni narysowana, bez animacji */
+        rope.classList.add("rope--static");
+      } else {
+        var len = mainPath.getTotalLength();
+        [mainPath, shadowPath].forEach(function (p) {
+          if (!p) return;
+          p.style.strokeDasharray = len;
+          p.style.strokeDashoffset = len;
+        });
+
+        var ticking = false;
+        function drawRope() {
+          ticking = false;
+          var doc = document.documentElement;
+          var max = doc.scrollHeight - window.innerHeight;
+          var progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 1;
+          /* Baseline: fragment liny widoczny już na górze (spod paska), pełna przy dole */
+          var drawn = 0.14 + progress * 0.86;
+          var offset = len * (1 - drawn);
+          mainPath.style.strokeDashoffset = offset;
+          if (shadowPath) shadowPath.style.strokeDashoffset = offset;
+          for (var i = 0; i < anchors.length; i++) {
+            var at = parseFloat(anchors[i].getAttribute("data-at")) || 0;
+            anchors[i].classList.toggle("is-visible", progress >= at);
+          }
+        }
+        function onScroll() {
+          if (!ticking) { ticking = true; requestAnimationFrame(drawRope); }
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll, { passive: true });
+        drawRope();
+      }
+    }
+
+    /* --- Suwak porównania PRZED / PO --- */
+    var range = document.getElementById("ba-range");
+    var before = document.getElementById("ba-before");
+    var divider = document.getElementById("ba-divider");
+    var handle = document.getElementById("ba-handle");
+    if (range && before) {
+      function setBA(v) {
+        before.style.width = v + "%";
+        if (divider) divider.style.left = v + "%";
+        if (handle) handle.style.left = v + "%";
+      }
+      range.addEventListener("input", function () { setBA(this.value); });
+      setBA(range.value);
+    }
+  })();
+  </script>
+</body>
+</html>
